@@ -2,3 +2,4 @@
 audio_chunks/
 audio_files/
 recognized/
+__pycache__
