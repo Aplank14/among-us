@@ -72,7 +72,6 @@ class GraphDisplay():
             ),
             dcc.Graph(id='dd-output-container')
 
-
         ])
 
         self.app.run_server(debug=True)
@@ -80,13 +79,12 @@ class GraphDisplay():
     def create_graphs(self, p1):
         main_df = pd.DataFrame(columns=['Word', 'Count', 'Name'])
         for speaker, data in p1.speakers.items():
-            df = pd.DataFrame(data.most_common(10), columns =['Word', 'Count'])
+            df = pd.DataFrame(data.most_common(100), columns =['Word', 'Count'])
             df['Name'] = speaker
             self.speakers[speaker] = df
             main_df = main_df.append(df)
 
-        df = pd.DataFrame(list(p1.totalWords.items()), columns =['Speaker', 'Count'])
-        print(df)
+        df = pd.DataFrame(list(p1.totalWords.items()), columns =['Speaker', 'Count']).sort_values('Count', ascending=False)
 
         self.graphs(main_df, df)
 

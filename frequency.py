@@ -74,3 +74,4 @@ class ProcessText():
 if __name__ == '__main__': 
     p1 = ProcessText()
     p1.analyze_text()    
+    p1.print_results()

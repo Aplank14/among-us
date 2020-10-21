@@ -28,7 +28,7 @@ class Speech:
             
         # split track where silence is 0.5 seconds  
         chunks = split_on_silence(audio, 
-            # must be silent for at least 2 secondss 
+            # must be silent for at least 1 secondss 
             min_silence_len = 1000, 
             # consider it silent if quieter than -50 dBFS 
             silence_thresh = -60,
